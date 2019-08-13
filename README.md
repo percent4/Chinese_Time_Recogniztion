@@ -28,13 +28,13 @@
 
 > 南宋绍兴十年
 
-&emsp;&emsp;因此，利用简单的词性标注功能来提取文本中的时间会存在漏提、错提的情况，鉴于此，笔者想到能否用深度学习模型来实现文本中的时间提取呢？
+&emsp;&emsp;因此，利用简单的词性标注功能来提取文本中的时间会存在漏提、错提的情况，鉴于此，笔者想到能否用深度学习模型来实现文本中的时间提取呢？\
 &emsp;&emsp;该功能类似于命名实体识别（NER）功能，只不过NER是识别文本中的人名、地名、组织机构名，而我们这次需要识别文本中的时间。但是，它们背后的算法原理都是一样的，即采用序列标注模型来解决。
 
 ### 项目
 
-&emsp;&emsp;在文章[NLP（十四）自制序列标注平台](https://www.jianshu.com/p/a32bdea77f3e)中，笔者提出了一种自制的序列标注平台，利用该标注平台，笔者从新闻网站中标注了大约2000份语料，标注出文本中的时间，其中75%作为训练集（time.train文件），10%作为验证集（time.dev文件），15%作为测试集（time.test文件）。
-&emsp;&emsp;虽然我们现在已经有了深度学习框架方便我们来训练模型，比如TensorFlow, Keras, PyTorch等，但目前已有某大神开源了一个序列标注和文本分类的模块，名称为kashgari-tf，它能够方便快速地用几行命令就可以训练一个序列标注或文本分类的模型，容易上手，而且集中了多种模型（BiGRU，CNN， BiLSTM，CRF）以及多种预训练模型（BERT，ERNIE，wwm-ext），对于用户来说算是十分友好了。该模块的参考网址为：[https://kashgari.bmio.net/](https://kashgari.bmio.net/) 。
+&emsp;&emsp;在文章[NLP（十四）自制序列标注平台](https://www.jianshu.com/p/a32bdea77f3e)中，笔者提出了一种自制的序列标注平台，利用该标注平台，笔者从新闻网站中标注了大约2000份语料，标注出文本中的时间，其中75%作为训练集（time.train文件），10%作为验证集（time.dev文件），15%作为测试集（time.test文件）。\
+&emsp;&emsp;虽然我们现在已经有了深度学习框架方便我们来训练模型，比如TensorFlow, Keras, PyTorch等，但目前已有某大神开源了一个序列标注和文本分类的模块，名称为kashgari-tf，它能够方便快速地用几行命令就可以训练一个序列标注或文本分类的模型，容易上手，而且集中了多种模型（BiGRU，CNN， BiLSTM，CRF）以及多种预训练模型（BERT，ERNIE，wwm-ext），对于用户来说算是十分友好了。该模块的参考网址为：[https://kashgari.bmio.net/](https://kashgari.bmio.net/) 。\
 &emsp;&emsp;笔者自己花了几天的时间来标注数据，目前已累计标注2000+数据 ，后续将放到Github供大家参考。我们训练的数据，比如time.train的前几行如下：（每一行中间用空格隔开）
 
 ```
@@ -166,8 +166,8 @@ while True:
 
 ### 总结
 
-&emsp;&emsp;利用深度学习模型，在小标注量数据上，我们对时间识别取得了不错的效果。后续如果我们想要提高时间识别的准确率，可以再多增加标注数据，目前还只有2000+数据～
-&emsp;&emsp;本项目已经开源，Github的地址为：。
+&emsp;&emsp;利用深度学习模型，在小标注量数据上，我们对时间识别取得了不错的效果。后续如果我们想要提高时间识别的准确率，可以再多增加标注数据，目前还只有2000+数据～\
+&emsp;&emsp;本项目已经开源，Github的地址为：[https://github.com/percent4/Chinese_Time_Recogniztion](https://github.com/percent4/Chinese_Time_Recogniztion) 。\
 
 &emsp;&emsp;另外，强烈推荐kashgari-tf模块，它能够让你在几分钟内搭建一个序列标注模型，而且方便加载各种预训练模型。
 
